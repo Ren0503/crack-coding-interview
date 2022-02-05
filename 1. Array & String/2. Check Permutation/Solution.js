@@ -3,7 +3,7 @@
  * @param {string} s2
  * @return {boolean}
  */
- var CheckPermutation = function (s1, s2) {
+var checkPermutation = function (s1, s2) {
     let n1 = s1.length,
         n2 = s2.length;
     if (n1 != n2) return false;

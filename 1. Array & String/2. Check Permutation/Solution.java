@@ -1,5 +1,5 @@
 class Solution {
-    public boolean CheckPermutation(String s1, String s2) {
+    public boolean checkPermutation(String s1, String s2) {
         int n1 = s1.length(), n2 = s2.length();
         if (n1 != n2) {
             return false;

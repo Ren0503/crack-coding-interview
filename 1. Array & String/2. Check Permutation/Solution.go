@@ -1,6 +1,6 @@
 package main
 
-func CheckPermutation(s1 string, s2 string) bool {
+func checkPermutation(s1 string, s2 string) bool {
 	freq := make(map[rune]int)
 	for _, r := range s1 {
 		freq[r]++

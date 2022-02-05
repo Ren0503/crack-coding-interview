@@ -1,7 +1,7 @@
 from collections import Counter
 
 class Solution:
-    def CheckPermutation(self, s1: str, s2: str) -> bool:
+    def checkPermutation(self, s1: str, s2: str) -> bool:
         n1, n2 = len(s1), len(s2)
         if n1 != n2:
             return False
