@@ -8,7 +8,7 @@ public:
         // If length of both strings is not same, then they
         // cannot be anagram
         if (n1 != n2)
-        return false;
+            return false;
 
         // Sort both strings
         sort(str1.begin(), str1.end());

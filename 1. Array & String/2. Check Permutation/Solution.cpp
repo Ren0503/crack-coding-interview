@@ -1,3 +1,5 @@
+#include <algorithm>
+
 class Solution {
 public:
     bool checkPermutation(string str1, string str2) {
