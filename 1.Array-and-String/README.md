@@ -1,6 +1,6 @@
 # Arrays & String
 
-Hy vọng rằng tất cả bạn đọc đều biết ít nhiều về mảng và chuỗi, vì vậy chúng tôi sẽ không nhắc lại những khái niệm chi tiết. Thay vào đó, chúng tôi sẽ tập trung vào một số kỹ thuật và vấn đề phổ biến hơn với các cấu trúc dữ liệu này.
+Hy vọng rằng tất cả bạn đọc đều đã biết ít nhiều về mảng và chuỗi, vì vậy chúng tôi sẽ không nhắc lại những khái niệm chi tiết. Thay vào đó, chúng tôi sẽ tập trung vào một số kỹ thuật và vấn đề phổ biến hơn với các cấu trúc dữ liệu này.
 
 Xin lưu ý rằng câu hỏi cho mảng và chuỗi thường có thể hoán đổi cho nhau. Có nghĩa là, một câu hỏi được nêu ra bằng cách sử dụng một mảng có thể được hỏi thay thế dưới dạng một câu hỏi chuỗi và ngược lại.
 
@@ -11,7 +11,7 @@ Bảng băm (hash table) là một cấu trúc dữ liệu ánh xạ các khoá 
 Ở triển khai này, ta dùng một mảng danh sách liên kết và hàm băm. Để chèn một khoá (có thể là kiểu chuỗi hoặc bất kỳ kiểu nào khác) và giá trị ta làm như sau:
 1. Đầu tiên, tính toán code của khoá băm, thường là kiểu `int` hoặc `long`. Lưu ý, hai khoá khác nhau có thể có cùng code băm, vì có thể có vô số khóa còn `int` thì hữu hạn.
 2. Sau đó, ánh xạ code băm với chỉ mục trong mảng. Điều này có thể thực hiện với một vài cách như `hash (key) % array_length`. Hai code băm khác nhau có thể có cùng chỉ mục.
-3. Ở chỉ mục này, đây là một danh sách liên kết của khoá và giá trị. Lưu trữ khoá và giá trị trong chỉ mục này. Ta phải dùng danh sách liên kết vì xung đột: bạn có thể có hai khoá khác nhau, có cùng code băm, hoặc hai code băm khác nhau ánh xạ cùng chỉ mục.
+3. Với chỉ mục, đây là một danh sách liên kết của khoá và giá trị. Lưu trữ khoá và giá trị trong chỉ mục này. Ta phải dùng danh sách liên kết vì xung đột: bạn có thể có hai khoá khác nhau nhưng lại có cùng code băm, hoặc hai code băm khác nhau nhưng ánh xạ cùng chỉ mục.
 
 Để truy xuất giá trị từ khoá cùng cặp, ta lặp lại quá trình trên. Tính toán code băm từ khoá, và tính toán chỉ mục từ code. Sau đó, tìm kiếm qua danh sách liên kết cho giá trị với khoá này.
 
@@ -23,7 +23,7 @@ Ngoài ta, ta có thể triển khai bảng băm với cây nhị phân tìm ki�
 
 ## ArrayList & Resizable Arrays 
 
-Ở một vài ngôn ngữ, mảng (array, cũng có thể là list) được thay đổi kích thước tự động. Mảng sẽ tăng lên khi thêm mục vào mảng. Một số ngôn ngữ, như Java kích thước của mảng là cố định. Kích thước được định nghĩa khi tạo mảng.
+Ở một vài ngôn ngữ, mảng (array, cũng có thể là list) được thay đổi kích thước tự động. Mảng sẽ tăng lên khi thêm mục vào mảng. Một số ngôn ngữ, như Java kích thước của mảng là cố định. Kích thước được định nghĩa khi bắt đầu tạo mảng.
 
 Khi bạn cần một mảng như cấu dữ liệu có thể thay đổi kích thước, ta sẽ dụng một ArrayList. Một ArrayList là một mảng có thể thay đổi kích thước của nó khi cần trong khi vẫn cung cấp khả năng truy cập `O(1)`. Một cách triển khai điển hình là khi mảng đầy, kích thước của mảng tăng gấp đôi. Mỗi lần nhân đôi như vậy mất `O(n)` thời gian, nhưng hiếm khi xảy ra đến mức thời gian chèn khấu hao của nó vẫn là `O(1)`.
 
